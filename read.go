@@ -67,7 +67,7 @@ type fts struct {
 }
 
 func (a fts) Less(b btree.Item) bool {
-	return a.ts.Before(b.(fts).ts)
+	return a.ts.After(b.(fts).ts) // newest first
 }
 
 func flatten(t *btree.BTree, max int) (res []string) {
