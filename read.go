@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"hash/crc32"
 	"image"
 	_ "image/gif"
 	_ "image/jpeg"
@@ -11,8 +12,6 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
-
-	"hash/crc32"
 
 	"github.com/google/btree"
 )

@@ -55,11 +55,11 @@ var tmplstr = strings.TrimSpace(`
 </head>
 <body>
 
-<section id="pics">
+<div id="pics">
 {{ range $pic := .pics -}}
 <a href="{{.Source}}"><img src="{{.Source}}" height={{.Height}} width={{.Width}} alt="{{.Alt}}" /></a>
 {{ end -}}
-</section>
+</div>
 
 </body>
 </html>
