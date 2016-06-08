@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	_ "image/gif"
 	_ "image/jpeg"
@@ -10,6 +11,8 @@ import (
 	"path/filepath"
 	"strings"
 	"time"
+
+	"hash/crc32"
 
 	"github.com/google/btree"
 )
@@ -42,6 +45,7 @@ func read(root string) []pic {
 			Source: picPathPrefix + strings.TrimPrefix(filename, root),
 			Height: config.Height,
 			Width:  config.Width,
+			Alt:    makeAlt(filename),
 		})
 	}
 	return pics
@@ -51,6 +55,7 @@ type pic struct {
 	Source string
 	Height int
 	Width  int
+	Alt    string
 }
 
 func isImage(ext string) bool {
@@ -78,4 +83,10 @@ func flatten(t *btree.BTree, max int) (res []string) {
 		return count < max
 	})
 	return res
+}
+
+func makeAlt(filename string) string {
+	h := crc32.NewIEEE()
+	fmt.Fprintf(h, filename)
+	return fmt.Sprintf("%x", h.Sum(nil))
 }

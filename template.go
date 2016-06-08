@@ -57,7 +57,7 @@ var tmplstr = strings.TrimSpace(`
 
 <section id="pics">
 {{ range $pic := .pics -}}
-<a href="{{.Source}}"><img src="{{.Source}}" height={{.Height}} width={{.Width}}/></a>
+<a href="{{.Source}}"><img src="{{.Source}}" height={{.Height}} width={{.Width}} alt="{{.Alt}}" /></a>
 {{ end -}}
 </section>
 
