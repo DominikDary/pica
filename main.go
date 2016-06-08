@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path/filepath"
+	"strings"
 )
 
 func main() {
@@ -14,6 +16,10 @@ func main() {
 		addr  = flag.String("addr", ":6174", "HTTP listen address")
 	)
 	flag.Parse()
+
+	if !strings.HasSuffix(*root, string(filepath.Separator)) {
+		*root += string(filepath.Separator)
+	}
 
 	log.Printf("%q serving from %s", *title, *root)
 	log.Printf("listening on %s", *addr)
