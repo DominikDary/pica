@@ -25,30 +25,30 @@ var tmplstr = strings.TrimSpace(`
 
 @media (max-width: 1200px) {
 	#pics {
-	-moz-column-count: 4;
-	-webkit-column-count: 4;
-	column-count: 4;
+		-moz-column-count: 4;
+		-webkit-column-count: 4;
+		column-count: 4;
 	}
 }
 @media (max-width: 1000px) {
 	#pics {
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
+		-moz-column-count: 3;
+		-webkit-column-count: 3;
+		column-count: 3;
 	}
 }
 @media (max-width: 800px) {
 	#pics {
-	-moz-column-count: 2;
-	-webkit-column-count: 2;
-	column-count: 2;
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		column-count: 2;
 	}
 }
 @media (max-width: 400px) {
 	#pics {
-	-moz-column-count: 1;
-	-webkit-column-count: 1;
-	column-count: 1;
+		-moz-column-count: 1;
+		-webkit-column-count: 1;
+		column-count: 1;
 	}
 }
 </style>
